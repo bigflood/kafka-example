@@ -1,0 +1,10 @@
+diff --git a/download-kafka.sh b/download-kafka.sh
+index 00bf451..3a5bf35 100755
+--- a/download-kafka.sh
++++ b/download-kafka.sh
+@@ -15,4 +15,4 @@ if [[ ! $(curl -s -f -I "${url}") ]]; then
+ fi
+ 
+ echo "Downloading Kafka from $url"
+-wget "${url}" -O "/tmp/${FILENAME}"
++wget "${url}" --no-check-certificate -O "/tmp/${FILENAME}"

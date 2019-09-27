@@ -2,14 +2,10 @@ version: '2'
 services:
   zookeeper:
     image: wurstmeister/zookeeper
-    networks:
-      dp: {}
     ports:
       - "2181:2181"
   kafka:
     build: ./kafka-docker
-    networks:
-      dp: {}
     ports:
       - "29092:9092"
     environment:
@@ -33,4 +29,6 @@ services:
   #     - kafka
 
 networks:
-  dp:
+  default:
+    external:
+      name: kafka-dp
